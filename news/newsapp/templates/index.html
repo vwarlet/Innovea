@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>News</title>
+
+    <style>
+        body {
+            margin: 2% 5%;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .header {
+            width: 100%;
+            border-radius: 5px;
+            padding: 10px;
+            background: darkgrey;
+            text-align: center;
+        }
+        
+        .list {
+            margin: 5px;
+            border: 1px solid #111111c9;
+            padding: 5px;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="header">
+        <h1>Latest News</h1>
+    </div>
+
+    {% for author, title, description, url in all_news %}
+    <a href="{{ url }}">
+        <div class="list">
+            {% if author %}
+                <p><strong>Author:</strong> {{ author }}</p>
+            {% else %}
+                <p><strong>Author:</strong> -</p>
+            {% endif %}
+            <p><strong>Title:</strong> {{ title }}</p>
+            <p><strong>Description:</strong> {{ description }}</p>
+        </div> 
+    </a>
+    {% endfor %}
+</body>
+
+</html>

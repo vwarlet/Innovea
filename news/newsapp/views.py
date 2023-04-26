@@ -2,12 +2,16 @@ from django.shortcuts import render
 from newsapi import NewsApiClient 
 
 
+'''
+    Para usar o 'everything' é necessário determinar alguns parâmetros (ex: assunto 'bitcoin')
+    Como não foi estipulado que tipos de notícias devem ser exibidas
+    Estou utilizando as últimas 50 notícias principais
+'''
 def home(request):
     newsapi = NewsApiClient(api_key='3b218e85618e4d8ba1b6f24b17e87586')
-    top_headlines = newsapi.get_top_headlines()
-    # everything = newsapi.get_everything()
-
+    top_headlines = newsapi.get_top_headlines(page_size=50)
     top_news = top_headlines['articles']
+    # everything = newsapi.get_everything(q='bitcoin')
     # top_news = everything['articles']
 
     title = []

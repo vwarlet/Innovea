@@ -1,5 +1,5 @@
 # INNOVEA Teste para Homologação
-Aplicação que consome a API https://newsapi.org/ e exibe a lista dos últimos artigos com informações de autores, título e descrição...
+Aplicação que consome a API https://newsapi.org/ e exibe a lista dos últimos 50 artigos de destaque, com informações de autores, título e descrição...
 
 ### Requisitos
 ```
